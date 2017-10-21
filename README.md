@@ -1,2 +1,2 @@
 # vuejs
-# Lerning VueJs with Udemy
+# Learning VueJs with Udemy
