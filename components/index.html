@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Components - VueJS</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css"></link>
+</head>
+<body>
+    <div id="app">
+        <count-component v-bind:number="10"></count-component> 
+        <!--Use v-bind to solve the issue String error because number="" return a string value not a Number-->
+    </div>
+    <script>
+        var counterComponent = Vue.component('count-component', {
+            template: `
+                <div>
+                    <div>Count: {{this.count}}</div>
+                    <button class="vue-btn" v-on:click="incrementNumber">Increment by {{this.number}}</button>
+                </div>
+            `,
+            props: {
+                number: {
+                    type: Number,//Type not a string text ""
+                    default: 1
+                }
+            },
+            data(){
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                incrementNumber(){
+                    this.count += this.number
+                }
+            },
+        })
+        var app = new Vue({
+            el: '#app',
+            components: {
+                counterComponent,
+            },
+        })
+    </script>
+</body>
+</html>

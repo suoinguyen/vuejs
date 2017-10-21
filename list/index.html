@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List - VueJS</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css"></link>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li 
+            v-for="color in colors" 
+            v-if="color.shown" 
+            v-bind:style="{color: color.text}">
+                {{color.text}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                colors: [
+                    {
+                        text: 'red',
+                        shown: true
+                    },
+                    {
+                        text: 'blue',
+                        shown: false
+                    },
+                    {
+                        text: 'orange',
+                        shown: false
+                    },
+                    {
+                        text: 'pink',
+                        shown: true
+                    },
+                    {
+                        text: 'green',
+                        shown: true
+                    },
+                    'red', 'blue', 'orange', 'pink', 'green'
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
