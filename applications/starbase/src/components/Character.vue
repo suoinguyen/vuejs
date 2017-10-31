@@ -2,6 +2,8 @@
     <div class="col-md-4">
         <div class="card">
             {{id}}
+            <br>
+            {{index}}
             <div class="card-block">
                 <button class="close" v-on:click="removeCharacterChild(index)">&times;</button>
                 <h4 class="card-title">{{character.name}}</h4>
@@ -38,12 +40,14 @@
             },
             removeCharacterChild(index){
                 this.$emit('removeCharacterParent', index);
-                this.fetchCharacterInfo(this.id);
             }
         },
         created(){
             this.fetchCharacterInfo(this.id);
         },
+        updated(){
+            this.fetchCharacterInfo(this.id);
+        }
     }
 </script>
 <style>
