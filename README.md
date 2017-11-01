@@ -1,6 +1,22 @@
 # Learning VueJs with Udemy
 
 ## Tổng hợp kiến thức cá nhân
+## Conmmand CLI bacsic
+
+```
+# install vue-cli
+$ npm install --global vue-cli
+# create a new project using the "webpack" template
+$ vue init webpack router-app
+```
+>***Create new project with webpack simple***
+```
+vue init webpack-simple project-name
+
+cd to project folder
+run `npm install`
+run `npm run dev`
+```
 ## Components
 ### **Props** 
 >***camelCase vs. kebab-case***
@@ -70,3 +86,6 @@ new Vue({
 ```
 <my-component v-on:click.native="doTheThing"></my-component>
 ```
+
+## Vue Router
+
