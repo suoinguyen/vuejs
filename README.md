@@ -86,6 +86,16 @@ new Vue({
 ```
 <my-component v-on:click.native="doTheThing"></my-component>
 ```
-
+- *Global variable of Vue-route is "$route"*
 ## Vue Router
 
+```
+<router-link :to="{ name: 'Hello' }">Home</router-link>
+<router-link to="/about">About</router-link>
+<router-view></router-view>
+```
+
+## Vuex
+- *Global variable of Vuex state is "$store.state"*
+- *Store only store the state*
+- import *store* from './store', store mus be lowercase

@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <h1>{{title}}</h1>
+    <router-link to="/data/people">Character</router-link>
+    |
+    <router-link to="/data/planets">Planet</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -8,9 +11,9 @@
 export default {
   name : 'App',
   data(){
-      return {
-          title: 'Starbase Router!'
-      }
+    return {
+        title: 'Starbase Router!'
+    }
   }
 }
 </script>
